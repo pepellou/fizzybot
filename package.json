@@ -1,0 +1,22 @@
+{
+  "name": "fizzybot",
+  "version": "1.0.0",
+  "description": "Just another Twitch bot, a fizzy one.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pepellou/fizzybot.git"
+  },
+  "author": "pepellou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pepellou/fizzybot/issues"
+  },
+  "homepage": "https://github.com/pepellou/fizzybot#readme",
+  "dependencies": {
+    "tmi.js": "^1.4.2"
+  }
+}
