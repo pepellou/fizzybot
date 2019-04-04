@@ -36,8 +36,7 @@ var bad_words = [
 
 var bad_words_strikes = { };
 
-client.on('chat', function(channel, userstate, message, self) {
-    var username = userstate['display-name'];
+var handleBadWords = function(client, channel, username, message) {
     if (message
         .toLowerCase()
         .split('')
@@ -59,6 +58,13 @@ client.on('chat', function(channel, userstate, message, self) {
             bad_words_strikes[username] = 0;
         }
     }
+};
+
+client.on('chat', function(channel, userstate, message, self) {
+    var username = userstate['display-name'];
+
+    handleBadWords(client, channel, username, message);
+
 });
 
 client.on('connected', function(address, port) {
