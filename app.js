@@ -3,7 +3,10 @@ var config = require('./config.js');
 
 var bad_words_timeout_seconds = 120;
 
-var channels = [ 'pepellou' ];
+var channels = [
+    'pepellou',
+    'joannatries'
+];
 
 var options = {
     options: { debug: true },
