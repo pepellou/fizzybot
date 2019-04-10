@@ -8,6 +8,7 @@ module.exports = {
     behaviours: {
 
         bad_words_detector: {
+            enabled: true,
             module: 'behaviours/bad_words',
             config: {
                 bad_words: [
@@ -33,6 +34,7 @@ module.exports = {
         },
 
         johanna_detector: {
+            enabled: false,
             module: 'behaviours/bad_words',
             config: {
                 bad_words: [
@@ -49,6 +51,7 @@ module.exports = {
         },
 
         poll_maker: {
+            enabled: true,
             module: 'behaviours/poll',
             config: {
             }
