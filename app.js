@@ -30,7 +30,9 @@ for (var behaviour in config.behaviours) {
     var config_behaviour = config.behaviours[behaviour];
 
     var module = require('./' + config_behaviour.module + '.js');
-    chat_modules.push(module.init(config_behaviour.config));
+    if (config_behaviour.enabled) {
+        chat_modules.push(module.init(config_behaviour.config));
+    }
 }
 
 client.on('chat', function(channel, userstate, message, self) {
