@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/pepellou/fizzybot#readme",
   "dependencies": {
+    "express": "^4.16.4",
+    "serverless-http": "^1.9.1",
     "tmi.js": "^1.4.2"
   }
 }
