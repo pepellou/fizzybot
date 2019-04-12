@@ -2,7 +2,7 @@ module.exports = {
 
     twitch: {
         name: 'FizzyWaterBot',
-        auth_key: '<your-twitch-app-oauth-key>'
+        auth_key: process.env.twitch_app_oauth_key
     },
 
     behaviours: {
@@ -34,18 +34,18 @@ module.exports = {
         },
 
         johanna_detector: {
-            enabled: false,
+            enabled: true,
             module: 'behaviours/bad_words',
             config: {
                 bad_words: [
                     'Johanna',
                     'johanna'
                 ],
-                max_strikes: Number.MAX_SAFE_INTEGER,
+                max_strikes: 1, //Number.MAX_SAFE_INTEGER,
                 timeout_amount: 120,
                 messages: {
                     strike: 'grrrr, it\'s Joanna!! This is your strike number #{strikes}.',
-                    timeout: 'You are timed out.'
+                    timeout: 'grrrr, it\'s Joanna!! You are timed out.'
                 }
             }
         },
@@ -53,9 +53,8 @@ module.exports = {
         poll_maker: {
             enabled: true,
             module: 'behaviours/poll',
-            config: {
-            }
-        },
+            config: {}
+        }
 
     }
 
