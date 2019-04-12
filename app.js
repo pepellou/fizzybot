@@ -1,5 +1,10 @@
 var tmi = require('tmi.js');
-var config = require('./config.js');
+var config = require('./config.js'),
+    cors = require('cors'),
+    express = require('express'),
+    app = express();
+
+const PORT = process.env.PORT || 3000;
 
 var bad_words_timeout_seconds = 120;
 
@@ -45,5 +50,12 @@ client.on('chat', function(channel, userstate, message, self) {
 
 client.on('connected', function(address, port) {
     channels.forEach(_ => client.say(_, 'Hey there! HeyGuys'));
+});
+
+
+app.use(cors());
+
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
 
