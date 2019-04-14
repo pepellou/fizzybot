@@ -1,5 +1,5 @@
-var webapp = require('./webapp.js'),
-    bot = require('./bot.js');
+var webapp = require('./src/webapp.js'),
+    bot = require('./src/bot.js');
 
 webapp.run();
 bot.run();

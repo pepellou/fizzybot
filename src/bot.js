@@ -1,5 +1,5 @@
 var tmi = require('tmi.js'),
-    config = require('./config.js'),
+    config = require('../config.js'),
     db = require('./db.js');
 
 var Bot = function() {
@@ -35,7 +35,7 @@ var Bot = function() {
         for (var behaviour in config.behaviours) {
             var config_behaviour = config.behaviours[behaviour];
 
-            var module = require('./' + config_behaviour.module + '.js');
+            var module = require('../' + config_behaviour.module + '.js');
             if (config_behaviour.enabled) {
                 chat_modules.push(module.init(config_behaviour.config));
             }
