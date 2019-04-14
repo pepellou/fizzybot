@@ -19,7 +19,9 @@
   "homepage": "https://github.com/pepellou/fizzybot#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dateformat": "^3.0.3",
     "express": "^4.16.4",
+    "mysql": "^2.16.0",
     "tmi.js": "^1.4.2"
   }
 }
