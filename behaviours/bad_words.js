@@ -1,3 +1,5 @@
+var log = require('../src/log.js');
+
 function BadWordsDetector(options) {
     var self = this;
 
@@ -53,6 +55,7 @@ function BadWordsDetector(options) {
                         .replace('#{strikes}', strikes)
                         .replace('#{max_strikes}', self._max_strikes)
                 );
+                log('Timing out user ' + username);
                 client.timeout(channel, username, self._timeout_amount, "Using bad words");
                 self._bad_words_strikes[username] = 0;
             }

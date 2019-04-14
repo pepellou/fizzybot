@@ -1,4 +1,5 @@
-var mysql = require('mysql');
+var mysql = require('mysql'),
+    log = require('./log.js');
 
 var DB = function() {
     var self = this;
@@ -8,6 +9,7 @@ var DB = function() {
         self._query = function(query, mapping, cb) {
             self._db.connect();
             self._db.query(query, function(err, rows, fields) {
+                log('Running db query => ' + query);
                 if (err) throw err;
                 cb(rows.map(mapping));
             });
